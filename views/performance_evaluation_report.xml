@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <!-- Pivot View Definition -->
+        <record id="view_performance_evaluation_pivot" model="ir.ui.view">
+            <field name="name">hr.performance.evaluation.pivot</field>
+            <field name="model">hr.performance.evaluation</field>
+            <field name="arch" type="xml">
+                <pivot string="Performance Evaluation">
+                    <!-- Group by Period -->
+                    <field name="period" type="row"/>
+                    <field name="employee_id" type="col"/>
+                    
+
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Action to Open Pivot and Tree View -->
+        <record id="action_performance_evaluation_report" model="ir.actions.act_window">
+            <field name="name">Performance Evaluation Report</field>
+            <field name="res_model">hr.performance.evaluation</field>
+            <field name="view_mode">pivot,tree</field> <!-- Pivot and List view -->
+            <field name="domain">[]</field> <!-- Add filtering domain if necessary -->
+        </record>
+
+        <!-- Tree View Definition -->
+        <record id="view_hr_performance_evaluation_tree" model="ir.ui.view">
+            <field name="name">hr.performance.evaluation.tree</field>
+            <field name="model">hr.performance.evaluation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="department_id"/>
+                    <field name="performance_score"/>
+                    <field name="period"/>
+
+
+                    <!--                    <field name="evaluation_date"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Menu for Performance Evaluation -->
+        <menuitem id="menu_performance_evaluation_report"
+                  name="Report"
+                  sequence="60"
+                  parent="performance_evaluator"
+                  action="action_performance_evaluation_report"/>
+    </data>
+</odoo>

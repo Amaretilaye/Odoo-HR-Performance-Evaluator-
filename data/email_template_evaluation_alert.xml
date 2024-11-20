@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="email_template_evaluation_alert" model="mail.template">
+            <field name="name">Evaluation Alert Email</field>
+            <field name="model_id" ref="performance_evaluator.model_evaluation_alert"/>
+            <field name="subject">Evaluation Alert Notification</field>
+            <field name="email_from">${object.user_id.email}</field>
+            <field name="email_to">${object.employee_id.work_email}</field>
+            <field name="body_html">
+                <![CDATA[
+                <p>Dear ${object.employee_id.name},</p>
+
+                <p>This is a notification regarding your evaluation: <strong>${object.name}</strong>.</p>
+
+                <p><strong>Evaluation Period:</strong></p>
+                <ul>
+                    <li>Start Date: ${object.start_date}</li>
+                    <li>End Date: ${object.end_date}</li>
+                </ul>
+
+                <p>Please ensure all necessary actions are completed before the deadline:</p>
+                <p><strong>Deadline:</strong> ${object.deadline}</p>
+
+                <p>For any questions, feel free to contact your manager or the HR department.</p>
+
+                <p>Best regards,</p>
+                <p>${object.user_id.name}</p>
+                <p>${object.user_id.email}</p>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

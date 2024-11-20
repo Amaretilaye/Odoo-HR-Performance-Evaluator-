@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Added smart button for viewing loan of the current employee on employee form view  -->
+        <record id="view_employee_form" model="ir.ui.view">
+            <field name="name">hr.employee.view.form.inherit.ohrms.loan</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" name="action_score_view"
+                            type="object" icon="fa-trophy" groups="hr.group_hr_manager,hr.group_hr_user">
+                        <field name="performance_score" widget="statinfo" string="score"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+
+</odoo>

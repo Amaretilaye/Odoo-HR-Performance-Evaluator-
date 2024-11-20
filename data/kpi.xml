@@ -1,0 +1,9 @@
+<odoo>
+    <record id="seq_kpi_order" model="ir.sequence">
+        <field name="name">hr kpi Sequence</field>
+        <field name="code">hr.kpi.sequence</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="implementation">no_gap</field>
+    </record>
+</odoo>

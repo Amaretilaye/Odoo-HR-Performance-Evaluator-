@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_kpi,access.hr.kpi,model_hr_kpi,base.group_user,1,1,1,1
+access_hr_kpi_line,access.hr.kpi.line,model_hr_kpi_line,base.group_user,1,1,1,1
+access_hr_performance_evaluation_line,access.hr.performance.evaluation.line,model_hr_performance_evaluation_line,base.group_user,1,1,1,1
+access_hr_performance_evaluation,access.hr.performance.evaluation,model_hr_performance_evaluation,base.group_user,1,1,1,1
+access_evaluation_alert,access.evaluation.alert,model_evaluation_alert,base.group_user,1,1,1,1
