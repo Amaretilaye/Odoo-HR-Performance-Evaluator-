@@ -21,11 +21,25 @@
         }
         img {
             max-width: 100%;
-            margin: 20px 0;
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            margin: 20px auto; /* Center images */
+            border: 1px solid #ddd; /* Optional: Add border to images */
         }
         ul {
             list-style: square;
             padding-left: 20px;
+        }
+        a {
+            color: #0077b5; /* LinkedIn blue */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 1.1em;
         }
     </style>
 </head>
@@ -70,7 +84,9 @@
     </ul>
     <img src="report.png" alt="Performance Report">
 
- <p>Email: amaretilaye1999@gmail.com</p>
- <p>linkedin: <a href="https://www.linkedin.com/in/amare-tilaye-768984299/"> Amare Tilaye</a></p>
+    <p>
+        <strong>Email:</strong> amaretilaye1999@gmail.com<br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/amare-tilaye-768984299/" target="_blank">Amare Tilaye</a>
+    </p>
 </body>
 </html>
