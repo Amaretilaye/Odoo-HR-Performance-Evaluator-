@@ -1,5 +1,5 @@
 {
-    'name': 'Performance Evaluator',
+    'name': 'hr_erformance_Evaluator',
     'version': '17.0',
     'category': 'Human Resources',
     'author': 'Arif Pay',
