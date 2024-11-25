@@ -6,7 +6,7 @@
     'website': 'https://www.amaretilaye.netlify.app',
     'license': 'LGPL-3',
     'summary': 'Manage employee performance evaluations using KPIs.',
-    'depends': ['hr', 'base'],
+    'depends': ['hr', 'base','mail', 'contacts',],
     'description': """
 Performance Evaluator for Odoo
 
