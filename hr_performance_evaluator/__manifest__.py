@@ -2,7 +2,7 @@
     'name': 'hr_erformance_Evaluator',
     'version': '17.0',
     'category': 'Human Resources',
-    'author': 'Arif Pay',
+    'author': 'Amare Tilaye',
     'website': 'https://www.amaretilaye.netlify.app',
     'license': 'LGPL-3',
     'summary': 'Manage employee performance evaluations using KPIs.',
