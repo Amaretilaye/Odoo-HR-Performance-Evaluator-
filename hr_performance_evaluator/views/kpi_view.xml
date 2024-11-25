@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Form View for KPI -->
+
+
+        <record id="view_hr_kpi_list" model="ir.ui.view">
+            <field name="name">hr kpi</field>
+            <field name="model">hr.kpi</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="name"/>
+                    <field name="job_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_hr_kpi_form" model="ir.ui.view">
+            <field name="name">hr.kpi.form</field>
+            <field name="model">hr.kpi</field>
+            <field name="arch" type="xml">
+                <form string="KPI">
+                    <sheet>
+                        <group class="space-y-6">
+                            <!-- Name Field -->
+                            <group class="flex flex-col space-y-2">
+
+
+                                <field name="name"
+                                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                            </group>
+
+                            <!-- Job Position Field -->
+                            <group class="flex flex-col space-y-2">
+                                <field name="job_id"
+                                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Key Performance">
+                                <group>
+                                    <field name="kpi_line_ids" string=""
+                                           mode="tree">
+                                        <tree editable="bottom">
+
+                                            <field name="key_performance_area"/>
+                                            <field name="name"/>
+
+                                            <field name="is_monthly" />
+                                            <field name="is_quarterly" />
+                                            <field name="is_half_yearly" />
+                                            <field name="is_yearly" />
+                                            <field name="weight" />
+
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for KPI (List View) -->
+
+
+        <!-- Action to Open KPI Form and List View -->
+        <record id="hr_kpi_action" model="ir.actions.act_window">
+            <field name="name">KPI</field>
+            <field name="res_model">hr.kpi</field>
+            <field name="view_mode">tree,form</field> <!-- Change view_mode to form,tree (not 'list') -->
+        </record>
+
+        <!-- Menu Item to Access KPI Form and List View -->
+        <menuitem id="performance_evaluator" name="Performance Evaluator" sequence="1"/>
+        <menuitem id="menu_kpi_form" name="KPI" parent="performance_evaluator" sequence="20" action="hr_kpi_action"/>
+    </data>
+</odoo>
