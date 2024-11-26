@@ -1,5 +1,5 @@
 {
-    'name': 'hr_erformance_Evaluator',
+    'name': 'HR Performance Evaluator',
     'version': '17.0',
     'category': 'Human Resources',
     'author': 'Amare Tilaye',
