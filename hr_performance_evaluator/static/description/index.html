@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Performance Evaluator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        h2 {
+            color: #2196F3;
+            margin-top: 20px;
+        }
+        .image-box {
+            width: 50%;
+            margin: 20px auto;
+            border: 1px solid #ddd; /* Optional: Add border to image box */
+            overflow: hidden; /* Ensures the image stays inside the box */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+        .image-box img {
+            width: 100%; /* Adjusts the image width to fit inside the box */
+            height: auto; /* Maintains the aspect ratio */
+        }
+        ul {
+            list-style: square;
+            padding-left: 20px;
+        }
+        a {
+            color: #0077b5; /* LinkedIn blue */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .image-box {
+                width: 80%; /* On smaller screens, make the image box 80% width */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-box {
+                width: 100%; /* On very small screens, make the image box 100% width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Performance Evaluator for Odoo</h1>
+    <p>
+        This module allows HR departments to manage and evaluate employee performance based on KPIs linked to their job positions. It includes features for automatic email alerts, performance evaluation by both employees and managers, and reporting.
+    </p>
+
+    <h2>Key Features:</h2>
+
+    <h3>1. KPI Setup in Odoo</h3>
+    <ul>
+        <li>Link KPIs to job positions.</li>
+        <li>Define Key Performance Areas (KPAs) with descriptions.</li>
+        <li>Set evaluation periods (monthly, quarterly, half-yearly, yearly).</li>
+        <li>Adjustable weights for each KPA.</li>
+    </ul>
+       <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#54A0FF; border-radius: 50%; padding: 15px;    width: 100%;
+                                    height: auto; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="kpi.png"
+                                    alt="KPI" width="100%"
+                                     height="auto" margin="auto">
+                            </div>
+
+    <h3>2. Evaluation Alerts</h3>
+    <ul>
+        <li><strong>Automatic Email Alerts:</strong> Notifications for the start and end of evaluation periods.</li>
+        <li><strong>Automatic Deactivation:</strong> Evaluation periods are automatically deactivated after the deadline.</li>
+    </ul>
+       <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#54A0FF; border-radius: 50%; padding: 15px;    width: 100%;
+                                    height: auto; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="alert.png"
+                                    alt="KPI" width="100%"
+                                     height="auto">
+                            </div>
+
+    <h3>3. Performance Evaluation</h3>
+    <ul>
+        <li>Dynamic KPA Display: When a user selects a specific KPI for evaluation, the associated KPA(s) are dynamically displayed, ensuring that the evaluation focuses on the correct areas relevant to that specific KPI.</li>
+        <li>Employees can self-evaluate based on KPIs.</li>
+        <li>Managers can evaluate employees, with both evaluations contributing to the final score.</li>
+        <li>Final scores are calculated as the average of employee and manager marks.</li>
+        <li>Admin approval is required for final scores.</li>
+    </ul>
+
+
+                  <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#54A0FF; border-radius: 50%; padding: 15px;    width: 100%;
+                                    height: auto; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="evaluation.png"
+                                    alt="evaluation" width="100%"
+                                     height="auto">
+                            </div>
+
+    <h3>4. Performance Report</h3>
+    <ul>
+        <li><strong>Pivot Report:</strong> View performance data in a pivot table format, summarizing scores by employee or department.</li>
+        <li><strong>Average Score Calculation:</strong> Calculate and display average scores for employees or departments based on the evaluation period.</li>
+        <li><strong>Dynamic Filtering:</strong> Filter reports by evaluation period, employee, or department.</li>
+    </ul>
+                  <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#54A0FF; border-radius: 50%; padding: 15px;    width: 100%;
+                                    height: auto; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="report.png"
+                                    alt="report" width="100%"
+                                     height="auto">
+                            </div>
+
+    <p>
+        <strong>Email:</strong> amaretilaye1999@gmail.com<br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/amare-tilaye-768984299/" target="_blank">Amare Tilaye</a>
+    </p>
+</body>
+</html>
