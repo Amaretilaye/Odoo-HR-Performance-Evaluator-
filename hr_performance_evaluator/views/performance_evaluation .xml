@@ -211,7 +211,7 @@
                                         <field name="weight"/>
                                         <field name="employee_self_mark"/>
                                         <field name="manager_mark"
-                                               groups="performance_evaluator.group_evaluation_manager"/>
+                                               groups="hr_performance_evaluator.group_evaluation_manager"/>
                                         <field name="final_rating"/>
                                     </tree>
                                 </field>
