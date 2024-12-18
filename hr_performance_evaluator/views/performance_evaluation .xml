@@ -160,11 +160,11 @@
 
                         <!-- Submit button -->
                         <button name="action_submit" type="object" string="Submit"
-                                groups="performance_evaluator.group_evaluation_user"
+                                groups="hr_performance_evaluator.group_evaluation_user"
                                 class="oe_highlight"/>
                         <!-- Approve button -->
                         <button name="action_approve" type="object" string="Approve"
-                                groups="performance_evaluator.group_evaluation_manager"
+                                groups="hr_performance_evaluator.group_evaluation_manager"
                                 class="oe_highlight"/>
 
                     </header>
