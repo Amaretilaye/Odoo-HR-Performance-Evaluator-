@@ -1,32 +1,47 @@
 <odoo>
-    <data>
+    <data noupdate="1">
         <record id="email_template_evaluation_alert" model="mail.template">
             <field name="name">Evaluation Alert Email</field>
-            <field name="model_id" ref="performance_evaluator.model_evaluation_alert"/>
-            <field name="subject">Evaluation Alert Notification</field>
-            <field name="email_from">${object.user_id.email}</field>
-            <field name="email_to">${object.employee_id.work_email}</field>
-            <field name="body_html">
-                <![CDATA[
-                <p>Dear ${object.employee_id.name},</p>
+            <field name="model_id" ref="hr_performance_evaluator.model_evaluation_alert"/>
+            <field name="subject">{{object.subject}}</field>
+            <field name="email_from">{{object.company_id.email}}</field>
+            <field name="email_to">{{ctx.get('email_to')}}</field>
+            <field name="body_html" type="html">
+                <div style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; color: #333; border-radius: 5px; border: 2px solid #28a745;">
+                    <h2 style="color: #1a73e8; text-align: center;">Performance Evaluation Notification</h2>
 
-                <p>This is a notification regarding your evaluation: <strong>${object.name}</strong>.</p>
+                    <p style="font-size: 16px; color: #333; line-height: 1.6; margin-top: 20px; padding: 10px; background-color: #e9f7ef; border-radius: 5px; border: 1px solid #28a745;">
+                        <strong style="color: #28a745;">Dear <t t-out="ctx.get('employee_name')"/>,</strong>
+                        <br> </br>
+                        <strong style="text-decoration: underline;">Subject:</strong> <t t-out="object.subject"/>
+                        <br> </br>
+                        <t t-out="object.body"/>
+                    </p>
 
-                <p><strong>Evaluation Period:</strong></p>
-                <ul>
-                    <li>Start Date: ${object.start_date}</li>
-                    <li>End Date: ${object.end_date}</li>
-                </ul>
+                    <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd; width: 30%;"><strong>Evaluation Period</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;"> <t t-out="object.period"/></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Start Date</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><t t-out="object.start_date"/></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><strong>End Date</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><t t-out="object.end_date"/></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Submission Deadline</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><t t-out="object.deadline"/></td>
+                        </tr>
+                    </table>
 
-                <p>Please ensure all necessary actions are completed before the deadline:</p>
-                <p><strong>Deadline:</strong> ${object.deadline}</p>
+                    <p style="margin-top: 20px;">Kindly complete your evaluation before the deadline. If you need any assistance or have questions, feel free to reach out to the HR department.</p>
 
-                <p>For any questions, feel free to contact your manager or the HR department.</p>
-
-                <p>Best regards,</p>
-                <p>${object.user_id.name}</p>
-                <p>${object.user_id.email}</p>
-                ]]>
+                    <p>Thank you,</p>
+                    <p><strong><t t-out="object.company_id.name"/></strong><br/>HR Team</p>
+                </div>
             </field>
         </record>
     </data>
