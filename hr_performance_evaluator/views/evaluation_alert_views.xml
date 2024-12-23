@@ -1,35 +1,57 @@
 <odoo>
+    <data>
     <!-- Form view for the Evaluation Alert -->
     <record id="view_evaluation_alert_form" model="ir.ui.view">
         <field name="name">evaluation.alert.form</field>
         <field name="model">evaluation.alert</field>
         <field name="arch" type="xml">
-            <form>
-                <group>
-                    <field name="period"/>
-                    <field name="start_date"/>
-                    <field name="end_date"/>
-                    <field name="deadline"/>
-                    <field name="active"/>
-                </group>
 
+            <form style="background-color: #a2f2b8; border: 2px solid #28a745; border-radius: 10px; margin-bottom: 20px; padding: 20px; font-family: Arial, sans-serif; color: #155724;">
+                 <sheet>
+                <header style="text-align: center; margin-bottom: 20px;">
+                    <h1 style="color: #0f9634;">Evaluation Alert</h1>
+                </header>
+                <group style="margin-bottom: 15px;">
+                    <field name="subject" style="margin-bottom: 10px;"/>
+                    <field name="body"  widget="html" style="margin-bottom: 10px;"/>
+                </group>
+                <group style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <group style="flex: 1; margin-right: 10px;">
+                        <field name="period" style="margin-bottom: 10px;"/>
+                        <field name="start_date" style="margin-bottom: 10px;"/>
+                        <field name="end_date" style="margin-bottom: 10px;"/>
+                        <field name="deadline" style="margin-bottom: 10px;"/>
+                    </group>
+                    <group style="flex: 1; margin-left: 10px;">
+                        <field name="active" style="margin-bottom: 10px;" widget="boolean_toggle"/>
+                        <field name="employee_id" style="margin-bottom: 10px;"  widget="many2many_tags"/>
+                        <field name="company_id" style="margin-bottom: 10px;"/>
+                    </group>
+                </group>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button name="action_send_email" type="object" string="Send Email" class="btn-primary"
+                            style="background-color: #28a745; color: white; border: none; padding: 10px 20px; font-size: 14px; border-radius: 5px; cursor: pointer;"/>
+                </div>
+                                    </sheet>
 
             </form>
+
         </field>
     </record>
+
 
     <!-- Tree view for the Evaluation Alert -->
     <record id="view_evaluation_alert_tree" model="ir.ui.view">
         <field name="name">evaluation.alert.tree</field>
         <field name="model">evaluation.alert</field>
         <field name="arch" type="xml">
-            <tree editable="top">
+            <tree>
                 <field name="period"/>
                 <field name="start_date"/>
                 <field name="end_date"/>
                 <field name="deadline"/>
                 <field name="active" widget="boolean_toggle"/>
-               <button name="action_send_email" type="object" string="Send Email" class="btn-primary"/>
+                <button name="action_send_email" type="object" string="Send Email" class="btn-primary"/>
 
             </tree>
         </field>
@@ -49,7 +71,7 @@
         </field>
     </record>
 
-    <menuitem id="menu_evaluation_alert" parent="performance_evaluator"  name="Evaluation Alerts" sequence="50"
+    <menuitem id="menu_evaluation_alert" parent="performance_evaluator" name="Evaluation Alerts" sequence="50"
               action="action_evaluation_alert"/>
-
+</data>
 </odoo>
